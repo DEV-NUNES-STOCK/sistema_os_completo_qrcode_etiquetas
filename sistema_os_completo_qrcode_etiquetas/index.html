@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - Sistema de OS</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div id="login-screen">
+    <h2>Login do Funcionário</h2>
+    <input type="text" id="usuario" placeholder="Usuário" />
+    <input type="password" id="senha" placeholder="Senha" />
+    <button onclick="login()">Entrar</button>
+  </div>
+
+  <div id="main-app" style="display: none;">
+    <h1>Sistema de Ordem de Serviço</h1>
+
+    <div class="os-form">
+      <h3>Cadastrar Nova OS</h3>
+      <input type="text" id="titulo" placeholder="Título do serviço" />
+      <textarea id="descricao" placeholder="Descrição"></textarea>
+      <input type="datetime-local" id="inicio" />
+      <input type="datetime-local" id="fim" />
+      <button onclick="adicionarOS()">Adicionar OS</button>
+    </div>
+
+    <div class="os-list" id="os-container">
+      <h3>Ordens de Serviço</h3>
+      <div id="lista-os"></div>
+    
+<button onclick="gerarQRCode()">Gerar QR Codes</button>
+
+
+<br><br>
+<input type="text" id="leitorQR" placeholder="Cole o texto lido do QR Code aqui" oninput="buscarOSPorQRCode(this.value)" />
+
+<div id="qr-codes" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+
+
+    <div class="grafico">
+      <h3>Gráfico de Manutenção</h3>
+      <canvas id="graficoOS" width="300" height="100"></canvas>
+    </div>
+
+    <div class="botoes">
+      <button onclick="gerarPDF()">Gerar PDF</button>
+      <button onclick="gerarExcel()">Exportar para Excel</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

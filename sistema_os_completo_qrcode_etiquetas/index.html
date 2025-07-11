@@ -8,22 +8,24 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
 </head>
 <body>
-  <div id="login-screen">
-    <h2>Login do Funcionário</h2>
+  <div id="login-screen" style="background: #e0eaf0; ">
+    <h2 class="login-title">Login</h2>
+
     <input type="text" id="usuario" placeholder="Usuário" />
     <input type="password" id="senha" placeholder="Senha" />
-    <button onclick="login()">Entrar</button>
+    <button class="login-button" onclick="login()">Entrar</button>
   </div>
 
   <div id="main-app" style="display: none;">
-    <h1>Sistema de Ordem de Serviço</h1>
+    <h1 style="color: white;">Sistema de Ordem de Serviço</h1>
 
     <div class="os-form">
       <h3>Cadastrar Nova OS</h3>
       <input type="text" id="titulo" placeholder="Título do serviço" />
-      <textarea id="descricao" placeholder="Descrição"></textarea>
+      <input type="text" id="descricao" placeholder="Descrição">
       <input type="datetime-local" id="inicio" />
       <input type="datetime-local" id="fim" />
       <button onclick="adicionarOS()">Adicionar OS</button>
